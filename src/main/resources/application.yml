@@ -1,0 +1,4 @@
+# slf4j
+logging.level.root=trace
+logging.file.path=D:/app/java/embedded/src/main/resources
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} %clr(%5p) [%thread] %clr(%logger){cyan} - %msg%n
