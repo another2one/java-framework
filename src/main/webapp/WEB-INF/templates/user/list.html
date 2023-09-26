@@ -16,7 +16,7 @@
     {% for user in users %}
     <tr>
         <td>{{ user.name }}</td>
-        <td>{{ user.initDate }}</td>
+        <td>{{ user.initDate | date("yyyy-MM-dd HH:mm:ss", timeZone="Asia/Chongqing") }}</td>
         <td>{{ user.showPass() }}</td>
         <td>
             <a class="btn btn-sm" href="/user/{{ user.id }}">详情</a>

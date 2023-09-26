@@ -11,7 +11,7 @@
     </tr>
     <tr>
         <td>生日</td>
-        <td>{{ user.initDate }}</td>
+        <td>{{ user.initDate | date("yyyy-MM-dd HH:mm:ss", timeZone="Asia/Chongqing") }}</td>
     </tr>
     <tr>
         <td>密码</td>
