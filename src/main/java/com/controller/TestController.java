@@ -21,7 +21,8 @@ import java.util.stream.Collectors;
 
 public class TestController {
     @GetMapping("/test1")
-    public ModelAndView test1() {
+    public ModelAndView test1() throws InterruptedException {
+        Thread.sleep(3000);
         return new ModelAndView("test1.html", "name", "world");
     }
 
@@ -31,10 +32,8 @@ public class TestController {
 
         // 打印 post 参数 dispatcher 里面读取了 不能重复读
         pw.write("</br>打印 post 参数</br>");
-//        ServletInputStream = req.getInputStream();
-//        pw.write(new String(servletInputStream.readAllBytes()));
-//        String s = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
-//        pw.write(s);
+        pw.write("post1 " + req.getReader().readLine());
+        pw.write("post2 " + req.getReader().lines().collect(Collectors.joining(System.lineSeparator())));
 
         // 打印 get 参数
         pw.write("</br>打印 get 参数</br>");
